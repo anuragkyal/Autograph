@@ -32,7 +32,7 @@ public class DrawingView extends View {
     public DrawingView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
 
-        mContext =context;
+        mContext = context;
         mPath = new Path();
         mBitmapPaint = new Paint(Paint.DITHER_FLAG);
 
@@ -68,8 +68,8 @@ public class DrawingView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawBitmap( mBitmap, 0, 0, mBitmapPaint);
-        canvas.drawPath( mPath, mStrokePaint);
+        canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
+        canvas.drawPath(mPath, mStrokePaint);
         canvas.drawPath(mCirclePath, mCirclePaint);
     }
 
@@ -126,5 +126,12 @@ public class DrawingView extends View {
                 break;
         }
         return true;
+    }
+
+    public void clear() {
+        mPath.reset();
+        mCirclePath.reset();
+        mCanvas.drawColor(getColor(mContext, R.color.signature_background_default));
+        invalidate();
     }
 }
