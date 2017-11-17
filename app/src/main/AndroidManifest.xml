@@ -3,6 +3,7 @@
     package="com.example.anuragkyal.autograph" >
 
     <application
+        android:name="com.example.anuragkyal.autograph.AutographApplication"
         android:allowBackup="true"
         android:icon="@mipmap/launcher_icon_blue"
         android:roundIcon="@mipmap/launcher_icon_blue"
